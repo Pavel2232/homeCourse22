@@ -38,29 +38,26 @@
           </button>
         </div>
         <a href="" class="item__post-link">
-          <img src="{{ post.poster_avatar }}" alt="" width="348" class="item__post-img">
+          <img src="{{ post.pic }}" alt="" width="348" class="item__post-img">
         </a>
         <div class="item__descr">
           <p class="item__text">
             {{ post.content }}
           </p>
-          <p class="item__text">
-            Итальянские закрытые сэндвичи называются панини. Для их&nbsp;приготовления берут чиабатту. В&nbsp;классическом рецепте используют традиционные итальянские продукты: помидоры, базилик, мацареллу.</p>
         </div>
-          {% for com in result_comment %}
         <div class="item__bottom">
           <div class="item__post-info">
-            <p class="item__comments-counter">{{ com.commentr_name|length }} комментария</p>
+            <p class="item__comments-counter">{{ result_comment|length }} комментария</p>
             <div class="item__counter">
               <img src="/../img/eye.png" alt="" class="item__counter-icon" width="26">
-              <span class="item__counter-text">1023</span>
+              <span class="item__counter-text">{{ post.views_count }}</span>
             </div>
           </div>
           <div class="item__comments">
+              {% for com in result_comment %}
             <p class="item__comment">
-              <b>{{ com.commentr_name }}:</b> комментарий пользователя который его оставил
-            </p>
-             {% endfor %}
+              <b>{{ com.commentr_name }}:</b> {{ com.comment }}   </p>
+                {% endfor %}
           </div>
         </div>
       </div>

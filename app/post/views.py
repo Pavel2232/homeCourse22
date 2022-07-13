@@ -6,7 +6,7 @@ from app.post.dao.post_dao import PostDAO,DATA_PATH
 post_blueprint = Blueprint('post_blueprint', __name__, template_folder='templates')
 
 
-@post_blueprint.route("/posts/<postid>")
+@post_blueprint.route("/posts/<int:postid>")
 def post_page(postid):
     posts = PostDAO(DATA_PATH)
     post = posts.get_post_by_pk(postid)
