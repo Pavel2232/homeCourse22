@@ -16,7 +16,7 @@
         </svg>
       </a>
       <a href="/bookmarks.html" class="header__bookmark-btn">
-        <img src="../../img/bookmark.png" alt="" class="header__bookmark-icon" width="28">
+        <img src="https://w7.pngwing.com/pngs/461/199/png-transparent-computer-icons-bookmark-font-awesome-ribbon-angle-ribbon-rectangle.png" alt="" class="header__bookmark-icon" width="28">
         <span class="header__bookmark-counter">3</span>
       </a>
     </div>
@@ -32,20 +32,20 @@
             <span class="item__username">{{post.poster_name}}</span>
           </a>
         </div>
-        <a href="/app/post/templates/post.html" class="item__post-link">
+        <a href="/posts/{{ post.pk }}" class="item__post-link">
           <img src="{{post.pic}}" alt="" width="348" class="item__post-img">
         </a>
         <p class="item__descr">{{post.content[:50] }}...</p>
         <div class="item__post-info">
           <div class="item__counter">
-            <img src="../../img/eye.png" alt="" class="item__counter-icon" width="26">
+            <img src="https://w7.pngwing.com/pngs/492/506/png-transparent-computer-icons-right-eye-miscellaneous-smiley-black.png" alt="" class="item__counter-icon" width="26">
             <span class="item__counter-text">{{post.views_count}}</span>
           </div>
         </div>
         <div class="item__post-bottom">
           <a href="/posts/{{ post.pk }}" class="item__btn-more">Подробнее</a>
           <button type="button" class="item__bookmark-btn">
-            <img src="../../img/bookmark.png" alt="" class="item__bookmark-icon" width="24">
+            <img src="https://w7.pngwing.com/pngs/461/199/png-transparent-computer-icons-bookmark-font-awesome-ribbon-angle-ribbon-rectangle.png" alt="" class="item__bookmark-icon" width="24">
           </button>
         </div>
       </div>
