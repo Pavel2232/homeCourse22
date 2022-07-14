@@ -44,12 +44,12 @@ class PostDAO:
     def search_for_posts(self,query):
        posts = self.load_data()
        list_post = []
-       post_lower = query.lower()
+       post_lower = str(query.lower())
 
        for post in posts:
-           post_content = post.content.lower().split(" ")
+           post_content = post.content.lower()
            if post_lower in post_content:
-                list_post.append(post)
+               list_post.append(post)
        return list_post
 
     def get_post_by_pk(self, pk):
@@ -57,4 +57,3 @@ class PostDAO:
         for post in posts:
             if post.pk == pk:
                 return post
-

@@ -16,7 +16,11 @@ def post_page(postid):
 
 @post_blueprint.route("/search")
 def post_search():
+    return render_template('search.html')
+
+@post_blueprint.route("/search",methods = ['GET'])
+def post_find():
     s = request.args.get('s')
     posts_data = PostDAO(DATA_PATH)
     posts = posts_data.search_for_posts(s)
-    return render_template('search.html', posts = posts)
+    return render_template('search.html', posts=posts)
